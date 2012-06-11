@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/AddFitnessScoreButton"
+        android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableRight="@drawable/plus_icon"
+        android:gravity="left|center"
+        android:text="@string/fitness_button"
+        android:textSize="20dp" />
+    
+    <Button
+        android:id="@+id/ViewPreviousScoreButton"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:drawableRight="@drawable/calendar_icon"
+        android:gravity="left|center"
+        android:text="@string/previous_button"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/ManageProfileButton"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:gravity="left|center"
+        android:text="@string/manage_button"
+        android:drawableRight="@drawable/pencil_icon"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/fitness_type_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="No Fitness Test Selected" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical" >
+        <ImageView
+			android:src="@drawable/transparent_background"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scaleType="centerInside"
+			android:adjustViewBounds="true"
+			android:contentDescription="@string/background_image" />
+    </LinearLayout>
+
+</LinearLayout>

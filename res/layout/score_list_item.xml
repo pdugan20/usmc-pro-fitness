@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- set layout_height to wrap_content instead of fill_parent so it won't fill the entire list  -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="3dp" >
+    
+    <LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+    <LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="1" >
+    <LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp" >
+    
+    <TextView 
+        android:text="@string/score_label" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="18dp"
+		android:textStyle="bold"
+		android:paddingRight="2dp" />
+    <TextView 
+        android:id="@+id/single_test_score" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="18dp"
+		android:paddingRight="5dp" />
+        
+    <TextView 
+        android:text="@string/class_label" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="18dp"
+		android:textStyle="bold"
+		android:paddingRight="2dp" />
+    <TextView 
+        android:id="@+id/user_class" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="18dp" />
+    
+    </LinearLayout>
+    
+    <LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp" >
+    <TextView 
+        android:text="@string/run_time_label" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp"
+		android:textStyle="bold"
+		android:paddingRight="2dp"/>    
+    <TextView 
+        android:id="@+id/run_time" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp" />
+    
+    <TextView 
+        android:text="@string/pullup_label" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp"
+		android:textStyle="bold"
+		android:paddingRight="2dp" />    
+    <TextView 
+        android:id="@+id/pullup_count" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp" />
+    
+    <TextView 
+        android:text="@string/crunches_label" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp"
+		android:textStyle="bold"
+		android:paddingRight="2dp" />
+    <TextView 
+        android:id="@+id/situp_count" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp" />
+    </LinearLayout>
+    
+    <LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp"
+    android:paddingBottom="3dp" >
+    <TextView 
+        android:text="@string/test_date_label" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp"
+		android:textStyle="bold"
+		android:paddingRight="2dp" />
+    <TextView 
+        android:id="@+id/test_date" 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="13dp" />
+
+    </LinearLayout>   
+    </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

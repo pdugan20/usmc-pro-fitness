@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, USMCProFitMainActivity!</string>
+    <string name="app_name">USMC ProFitness</string>
+    <string name="fitness_button">Add Fitness Test Score</string>
+    <string name="previous_button">View Previous Scores</string>
+    <string name="manage_button">Manage Profile</string>
+    <string name="background_image">Transparent USMC Background</string>
+    <string name="add_score_main_title">Add Test Score</string>
+    <string name="add_score_pft_title">Add Test Score (PFT)</string>
+    <string name="pft_test_description">Description:\nThe Physical Fitness Test (PFT) is comprised of a 3-mile run, pull-ups, and crunches.  The run even is timed.</string>
+    <string name="cft_test_description">Description:\nThe Combat Fitness Test (CFT) is comprised of a sprint, grenade-toss, firemans carry, and obstacle course.</string>
+    <string name="pft_background">PFT</string>
+    <string name="cft_background">CFT</string>
+    <string name="next_button">Next</string>
+    <string name="back_button">Back</string>
+    <string name="divider_description">Header Divider</string>
+    <string name="select_fitness_test_label">SELECT A FITNESS TEST</string>
+    <string name="select_run_time_label">SELECT A 3-MILE RUN TIME</string>
+    <string name="pullup_number_label">NUMBER OF PULLUPS</string>
+    <string name="crunches_number_label">NUMBER OF CRUNCHES</string>
+    <string name="current_pullup_number">10</string>
+    <string name="current_crunches_number">50</string>
+    <string name="minutes_label">(minutes)</string>
+    <string name="seconds_label">(seconds)</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="run_time_generic">18 min</string>
+    <string name="run_time_second_generic">30 sec</string>
+    <string name="username_label">CHOOSE A USERNAME</string>
+    <string name="username_hint">Username</string>
+    <string name="gender_label">GENDER</string>
+    <string name="male_radio">Male</string>
+    <string name="female_radio">Female</string>
+    <string name="age_group_label">AGE GROUP</string>
+    <string name="age_first">17 - 26</string>
+    <string name="age_second">27 - 39</string>
+    <string name="age_third">40 - 45</string>
+    <string name="age_forth">45 +</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+    <string name="manage_profile_title">Create Your Profile</string>
+    <string name="view_score_title">Previous Test Scores</string>
+    <string name="view_score_detailed_title">Test Score (Detailed)</string>
+    <string name="run_time_label">Run Time: </string>
+    <string name="pullup_label">, Pullups: </string>
+    <string name="crunches_label">, Crunches: </string>
+    <string name="pullup_label2">Pullups: </string>
+    <string name="crunches_label2">Crunches: </string>
+    <string name="class_label">Class: </string>
+    <string name="score_label">Score: </string>
+    <string name="test_date_label">Test Date: </string>
+    <string name="username_list_label">, Username: </string>
+    <string name="score_share">Share Score</string>
+    <string name="delete_button">Delete</string>
+    
+    <string-array name="fitness_test_array">
+        <item>PFT: Physical Fitness Test</item>
+        <item>CFT: Combat Fitness Test</item>
+    </string-array>
+
+</resources>
