@@ -9,11 +9,13 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 public class ScoreViewAdapter extends CursorAdapter {
+	@SuppressWarnings("deprecation")
 	public ScoreViewAdapter(Context context, Cursor cursor) {
 		// this use to be where our pre-defined times were entered
 		super(context, cursor);
 	}
 
+	@Override
 	public void bindView(View view, Context context, Cursor cursor) {
 		TextView runTimeTextView = (TextView) view.findViewById(R.id.run_time);
 		runTimeTextView.setText(cursor.getString(cursor.getColumnIndex("runTime")));
@@ -36,6 +38,7 @@ public class ScoreViewAdapter extends CursorAdapter {
 	}
 	
 	// Layout inflater is retreived and the layout is inflated then returned
+	@Override
 	public View newView(Context context, Cursor cursor, ViewGroup parent) {
 		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 		View view = inflater.inflate(R.layout.score_list_item, parent, false);

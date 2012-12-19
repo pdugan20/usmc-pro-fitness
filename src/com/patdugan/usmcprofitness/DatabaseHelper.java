@@ -45,6 +45,7 @@ public class DatabaseHelper {
 		}
 		
 		// when the db is created. this method is called by onUpgrade when the version number is changed
+		@Override
 		public void onCreate(SQLiteDatabase database) {
 			// execSQL actually creates the schema of the db we defined in the method above
 			database.execSQL(
@@ -69,6 +70,7 @@ public class DatabaseHelper {
 		}
 		
 		// when the version number is changed, this method is called
+		@Override
 		public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
 			// drops table if exists, and then calls onCreate which implements our new schema
 			database.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);

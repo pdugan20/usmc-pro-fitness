@@ -3,17 +3,24 @@ package com.patdugan.usmcprofitness;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.SeekBar;
-import android.widget.TextView;
 import android.view.View.OnClickListener;
 
-public class AddTestScorePFTActivity extends Activity implements SeekBar.OnSeekBarChangeListener, OnClickListener {	
+// import android.widget.Button;
+// import android.widget.SeekBar;
+// import android.widget.TextView;
+
+import org.holoeverywhere.widget.Button;
+import org.holoeverywhere.widget.TextView;
+import org.holoeverywhere.widget.SeekBar;
+
+//import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+
+public class AddTestScorePFTActivity extends org.holoeverywhere.app.Activity implements SeekBar.OnSeekBarChangeListener, OnClickListener {	
 	
 	SeekBar pullUpSeekBar;
     SeekBar crunchesSeekBar;    
@@ -47,6 +54,9 @@ public class AddTestScorePFTActivity extends Activity implements SeekBar.OnSeekB
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_score_pft);
+        
+        // Adds the up arrow to the application-icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         databaseHelper = new DatabaseHelper(this);
         
@@ -68,7 +78,8 @@ public class AddTestScorePFTActivity extends Activity implements SeekBar.OnSeekB
         
         Button NextActivityButton = (Button) findViewById(R.id.NextButton);
         NextActivityButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		
         		// Generic variables which are loaded by default
             	String runTime = pftRunTimeCombined;
@@ -153,7 +164,8 @@ public class AddTestScorePFTActivity extends Activity implements SeekBar.OnSeekB
         
         Button BackActivityButton = (Button) findViewById(R.id.BackButton);
         BackActivityButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		finish(); 
         	}
         });
@@ -180,7 +192,8 @@ public class AddTestScorePFTActivity extends Activity implements SeekBar.OnSeekB
         
     }
     
-    public void onClick(View v) {
+    @Override
+	public void onClick(View v) {
     	if(v == runTimeAddMinutes)
     		setRunTimeMinutes(runTimeMinutes + 1);
     	else if(v == runTimeDecreaseMinutes)
@@ -233,4 +246,22 @@ public class AddTestScorePFTActivity extends Activity implements SeekBar.OnSeekB
 	public void onStopTrackingTouch(SeekBar seekBar) {
 		// TODO Auto-generated method stub	
 	}
+	
+	 // Uses Action-Bar Home button to clear activity-stack and return home
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                Intent parentActivityIntent = new Intent(this, USMCProFitMainActivity.class);
+                parentActivityIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(parentActivityIntent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

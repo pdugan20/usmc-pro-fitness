@@ -1,7 +1,6 @@
 package com.patdugan.usmcprofitness;
 
-import android.app.Activity;
-import android.app.AlertDialog;
+// import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,10 +12,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ListView;
-import android.widget.Toast;
 
-public class ViewTestScoresActivity extends Activity {
+// import android.widget.ListView;
+// import android.widget.Toast;
+
+import org.holoeverywhere.widget.Toast;
+import org.holoeverywhere.widget.ListView;
+import org.holoeverywhere.app.AlertDialog;
+
+// import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+
+public class ViewTestScoresActivity extends org.holoeverywhere.app.Activity {
 	private DatabaseHelper databaseHelper;
 	public String runTime;
 	public String crunchCount;
@@ -28,9 +35,14 @@ public class ViewTestScoresActivity extends Activity {
 	public Integer dbId;
 	public ScoreViewAdapter scoreViewAdapter;
 	
-    public void onCreate(Bundle savedInstanceState) {
+    @Override
+	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_scores);
+        
+        // Adds the up arrow to the application-icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        
         databaseHelper = new DatabaseHelper(this);
         
         final ListView listView = (ListView) findViewById(R.id.times_list);
@@ -40,6 +52,7 @@ public class ViewTestScoresActivity extends Activity {
         
         // Sets listener for short-click which prompts to share list-item
         listView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
 			public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
 				// Get score info from a single test record
 				final long list_view_row_id = id;
@@ -80,6 +93,7 @@ public class ViewTestScoresActivity extends Activity {
         
         // Sets listener for long-click which prompts to delete list item
         listView.setOnItemLongClickListener(new OnItemLongClickListener() {
+			@Override
 			public boolean onItemLongClick(AdapterView<?> a, View v, int position, long id) {
 				Vibrator deleteVibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				deleteVibe.vibrate(300);
@@ -127,5 +141,23 @@ public class ViewTestScoresActivity extends Activity {
 		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
 	}
+    
+    // Uses Action-Bar Home button to clear activity-stack and return home
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                Intent parentActivityIntent = new Intent(this, USMCProFitMainActivity.class);
+                parentActivityIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(parentActivityIntent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 	

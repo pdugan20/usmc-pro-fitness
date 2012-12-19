@@ -1,15 +1,22 @@
 package com.patdugan.usmcprofitness;
 
-import android.app.Activity;
-import android.app.AlertDialog;
+// import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-public class ViewDetailedTestScoreActivity extends Activity {
+// import android.widget.Button;
+// import android.widget.TextView;
+
+import org.holoeverywhere.widget.Button;
+import org.holoeverywhere.widget.TextView;
+import org.holoeverywhere.app.AlertDialog;
+
+//import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
+
+public class ViewDetailedTestScoreActivity extends org.holoeverywhere.app.Activity {
 	public String runTime;
 	public String crunchCount;
 	public String pullUpCount;
@@ -21,9 +28,13 @@ public class ViewDetailedTestScoreActivity extends Activity {
 	public ScoreViewAdapter scoreViewAdapter;
 	private DatabaseHelper databaseHelper;
 	
-    public void onCreate(Bundle savedInstanceState) {
+    @Override
+	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.score_item_detailed);
+        
+        // Adds the up arrow to the application-icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
         databaseHelper = new DatabaseHelper(this);
         
@@ -55,7 +66,8 @@ public class ViewDetailedTestScoreActivity extends Activity {
 
 		Button ShareButton = (Button) findViewById(R.id.share_button);
 		ShareButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		
         		Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
@@ -69,7 +81,8 @@ public class ViewDetailedTestScoreActivity extends Activity {
 		
 		Button DeleteButton = (Button) findViewById(R.id.delete_button);
 		DeleteButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		
         		AlertDialog.Builder adb = new AlertDialog.Builder(ViewDetailedTestScoreActivity.this);
 				
@@ -93,5 +106,23 @@ public class ViewDetailedTestScoreActivity extends Activity {
 		});
 		
 	};
+	
+	 // Uses Action-Bar Home button to clear activity-stack and return home
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                Intent parentActivityIntent = new Intent(this, USMCProFitMainActivity.class);
+                parentActivityIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(parentActivityIntent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 	
