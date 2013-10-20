@@ -1,23 +1,19 @@
 package com.patdugan.usmcprofitness;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.os.Vibrator;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ListView;
-import android.widget.Toast;
+// import android.app.AlertDialog;
 
-public class ViewTestScoresActivity extends Activity {
-	private DatabaseHelper databaseHelper;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.MenuItem;
+import org.holoeverywhere.widget.Toast;
+
+// import android.widget.ListView;
+// import android.widget.Toast;
+// import com.actionbarsherlock.app.SherlockActivity;
+
+public class ViewTestScoresActivity extends org.holoeverywhere.app.ListActivity {
 	public String runTime;
 	public String crunchCount;
 	public String pullUpCount;
@@ -28,83 +24,29 @@ public class ViewTestScoresActivity extends Activity {
 	public Integer dbId;
 	public ScoreViewAdapter scoreViewAdapter;
 	
-    public void onCreate(Bundle savedInstanceState) {
+    @Override
+	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_scores);
-        databaseHelper = new DatabaseHelper(this);
         
-        final ListView listView = (ListView) findViewById(R.id.times_list);
-        scoreViewAdapter = new ScoreViewAdapter(
-        	this, databaseHelper.getAllTimeRecords());
-        listView.setAdapter(scoreViewAdapter);
+        // Adds the up arrow to the application-icon
+        ActionBar bar = getSupportActionBar();
+        bar.setDisplayHomeAsUpEnabled(true);
         
-        // Sets listener for short-click which prompts to share list-item
-        listView.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
-				// Get score info from a single test record
-				final long list_view_row_id = id;
-		        Cursor SingleTestRecordCursor = databaseHelper.getSingleTimeRecord(String.valueOf(list_view_row_id));
-		        if (SingleTestRecordCursor != null ) {
-		            if (SingleTestRecordCursor.moveToFirst()) {
-		                do {
-		                    runTime = SingleTestRecordCursor.getString(SingleTestRecordCursor.getColumnIndex("runTime"));
-		                    crunchCount = SingleTestRecordCursor.getString(SingleTestRecordCursor.getColumnIndex("situpCount"));
-		                    pullUpCount = SingleTestRecordCursor.getString(SingleTestRecordCursor.getColumnIndex("pullupCount"));
-		                    pftScore = SingleTestRecordCursor.getString(SingleTestRecordCursor.getColumnIndex("testScore"));
-		                    pftClass = SingleTestRecordCursor.getString(SingleTestRecordCursor.getColumnIndex("userClass"));
-		                    testDate = SingleTestRecordCursor.getString(SingleTestRecordCursor.getColumnIndex("testDate"));
-		                    dbId = SingleTestRecordCursor.getInt(SingleTestRecordCursor.getColumnIndex("_id"));
-		                } while (SingleTestRecordCursor.moveToNext());
-		                	Log.d("runtime", runTime);
-		                	Log.d("crunchcount", crunchCount);
-		                	Log.d("pullupcount", pullUpCount);
-		                	Log.d("pftscore", pftScore);
-		                	Log.d("pftclass", pftClass);
-		                	Log.d("testdate", testDate);
-		                	Log.d("dbId", dbId.toString());
-		            }
-		        }
-		        SingleTestRecordCursor.close();
-		        
-		        Intent i = new Intent(ViewTestScoresActivity.this, ViewDetailedTestScoreActivity.class);
-        		i.putExtra("runTime", runTime);
-        		i.putExtra("crunchCount", crunchCount);
-        		i.putExtra("pullUpCount", pullUpCount);
-        		i.putExtra("pftScore", pftScore);
-        		i.putExtra("pftClass", pftClass);
-        		i.putExtra("testDate", testDate);
-        		i.putExtra("dbId", dbId);
-        	    startActivity(i);
-			}
-        });
+        // Tell the ActionBar we want to use tabs
+        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
-        // Sets listener for long-click which prompts to delete list item
-        listView.setOnItemLongClickListener(new OnItemLongClickListener() {
-			public boolean onItemLongClick(AdapterView<?> a, View v, int position, long id) {
-				Vibrator deleteVibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-				deleteVibe.vibrate(300);
-				
-				AlertDialog.Builder adb = new AlertDialog.Builder(ViewTestScoresActivity.this);
-				final long list_view_row_id = id;
-				
-				adb.setTitle("Delete Score?");
-    	        adb.setMessage("Are you sure you want to delete this score?");
-    	        adb.setNegativeButton("Cancel", null);
-    	        
-    	        adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {  	
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						databaseHelper.deleteSingleRecord(String.valueOf(list_view_row_id));
-						// This is a hacky way to refresh the ListView
-						Intent refreshActivity = new Intent(ViewTestScoresActivity.this, ViewTestScoresActivity.class);
-						ViewTestScoresActivity.this.finish();
-		        	    startActivity(refreshActivity);
-					}
-				});
-    	        adb.show();
-				return false;
-			}
-		});
+        // Initiating both tabs and sets their text
+        ActionBar.Tab pftTab = bar.newTab().setText("PFT Scores");
+        ActionBar.Tab cftTab = bar.newTab().setText("CFT Scores");
+
+        // Set the Tab listener so we can listen for clicks
+        pftTab.setTabListener(new ScoreViewTabListener<PftFragment>(this, "pft", PftFragment.class));
+        cftTab.setTabListener(new ScoreViewTabListener<CftFragment>(this, "cft", CftFragment.class));
+        
+        // Add the two tabs to the action-bar
+        bar.addTab(pftTab);
+        bar.addTab(cftTab);
         
         Bundle extras = getIntent().getExtras();        
         if(extras == null) {
@@ -127,5 +69,23 @@ public class ViewTestScoresActivity extends Activity {
 		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
 	}
+    
+    // Uses Action-Bar Home button to clear activity-stack and return home
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                Intent parentActivityIntent = new Intent(this, USMCProFitMainActivity.class);
+                parentActivityIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(parentActivityIntent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 	

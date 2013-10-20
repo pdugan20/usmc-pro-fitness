@@ -1,39 +1,56 @@
 package com.patdugan.usmcprofitness;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
+import com.actionbarsherlock.view.MenuItem;
+import org.holoeverywhere.ArrayAdapter;
+import org.holoeverywhere.widget.AdapterView;
+import org.holoeverywhere.widget.AdapterView.OnItemSelectedListener;
+import org.holoeverywhere.widget.Button;
+import org.holoeverywhere.widget.Spinner;
+import org.holoeverywhere.widget.TextView;
 
-public class AddTestScoreMainActivity extends Activity {	
+// import android.widget.AdapterView;
+// import android.widget.AdapterView.OnItemSelectedListener;
+// import android.widget.ArrayAdapter;
+// import android.widget.Button;
+// import android.widget.Spinner;
+// import android.widget.TextView;
+// import com.actionbarsherlock.app.SherlockActivity;
+
+public class AddTestScoreMainActivity extends org.holoeverywhere.app.Activity {	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_score);
         
+        // Adds the up arrow to the application-icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        
         final Spinner spinner = (Spinner) findViewById(R.id.test_selection_spinner);
         Button NextActivityButton = (Button) findViewById(R.id.NextButton);
         Button BackActivityButton = (Button) findViewById(R.id.BackButton);
         
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
-                R.array.fitness_test_array, 
-                android.R.layout.simple_spinner_item
+                R.array.fitness_test_array,
+                // replaced default with holoeverywhere library
+                // android.R.layout.simple_spinner_item
+                org.holoeverywhere.R.layout.simple_spinner_item
         		);
         
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(
+        		// replaced default with holoeverywhere library
+        		// android.R.layout.simple_spinner_dropdown_item
+        		org.holoeverywhere.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);         
         spinner.setOnItemSelectedListener(new FitnessTestTypeOnItemSelectedListener());
         
         NextActivityButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		Intent i = new Intent(AddTestScoreMainActivity.this, AddTestScorePFTActivity.class);
                 i.putExtra("fitness_test_type", spinner.getSelectedItem().toString());
         	    startActivity(i);  
@@ -41,10 +58,29 @@ public class AddTestScoreMainActivity extends Activity {
         });
            
         BackActivityButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		finish(); 
         	}
         });
+    }
+    
+    // Uses Action-Bar Home button to clear activity-stack and return home
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                Intent parentActivityIntent = new Intent(this, USMCProFitMainActivity.class);
+                parentActivityIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(parentActivityIntent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     
     public class FitnessTestTypeOnItemSelectedListener implements OnItemSelectedListener {

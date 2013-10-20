@@ -1,18 +1,23 @@
 package com.patdugan.usmcprofitness;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import com.actionbarsherlock.view.MenuItem;
+import org.holoeverywhere.widget.Button;
+import org.holoeverywhere.widget.EditText;
+import org.holoeverywhere.widget.RadioButton;
 
-public class CreateProfileActivity extends Activity implements OnCheckedChangeListener {
+// import android.widget.Button;
+// import android.widget.EditText;
+// import android.widget.RadioButton;
+// import com.actionbarsherlock.app.SherlockActivity;
+
+public class CreateProfileActivity extends org.holoeverywhere.app.Activity implements OnCheckedChangeListener {
 	
 	public DatabaseHelper databaseHelper;
 	public String userName = "DefaultUser";
@@ -24,6 +29,9 @@ public class CreateProfileActivity extends Activity implements OnCheckedChangeLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_profile);
+        
+        // Adds the up arrow to the application-icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
         // Assign ids for ageGroup RadioButtons
 		RadioButton ageGroup1 = (RadioButton) findViewById(R.id.age_first);
@@ -87,7 +95,8 @@ public class CreateProfileActivity extends Activity implements OnCheckedChangeLi
         
         // Assign onClick Listener for Save button which writes to db and correctly sets username flag
         SaveProfileButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {		
+        	@Override
+			public void onClick(View v) {		
         		EditText userNameEditText = (EditText) findViewById(R.id.username_edit_text);
         		if (userNameEditText.getText().toString() == null) {
                 	userName = "DefaultUser";
@@ -103,7 +112,8 @@ public class CreateProfileActivity extends Activity implements OnCheckedChangeLi
         });
         // Assign onClick Listener for CancelButton which closes activity stack
         CancelProfileButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
+        	@Override
+			public void onClick(View v) {
         		finish(); 
         	}
         });
@@ -137,4 +147,22 @@ public class CreateProfileActivity extends Activity implements OnCheckedChangeLi
         	userAge = "Group4";
         }
 	}
+	
+	 // Uses Action-Bar Home button to clear activity-stack and return home
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // This is called when the Home (Up) button is pressed
+                // in the Action Bar.
+                Intent parentActivityIntent = new Intent(this, USMCProFitMainActivity.class);
+                parentActivityIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(parentActivityIntent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
