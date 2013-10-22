@@ -3,7 +3,7 @@ package com.patdugan.usmcprofitness;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import org.holoeverywhere.ArrayAdapter;
+import org.holoeverywhere.widget.ArrayAdapter;
 import org.holoeverywhere.LayoutInflater;
 import org.holoeverywhere.app.ListFragment;
 

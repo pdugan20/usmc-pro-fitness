@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.actionbarsherlock.view.MenuItem;
-import org.holoeverywhere.ArrayAdapter;
+import org.holoeverywhere.widget.ArrayAdapter;
 import org.holoeverywhere.widget.AdapterView;
 import org.holoeverywhere.widget.AdapterView.OnItemSelectedListener;
 import org.holoeverywhere.widget.Button;
