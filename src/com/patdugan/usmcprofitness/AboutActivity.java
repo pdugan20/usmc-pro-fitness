@@ -6,14 +6,6 @@ import android.os.Bundle;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.MenuItem;
 
-// import android.widget.AdapterView;
-// import android.widget.AdapterView.OnItemSelectedListener;
-// import android.widget.ArrayAdapter;
-// import android.widget.Button;
-// import android.widget.Spinner;
-// import android.widget.TextView;
-// import com.actionbarsherlock.app.SherlockActivity;
-
 public class AboutActivity extends org.holoeverywhere.app.Activity {	
     /** Called when the activity is first created. */
     @Override
