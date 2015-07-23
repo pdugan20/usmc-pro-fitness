@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_window_focused="true" android:drawable="@drawable/btn_rating_star_on_pressed_holo_dark" android:state_pressed="true"></item>
+
+    <item android:state_focused="true" android:state_window_focused="true" android:drawable="@drawable/btn_rating_star_on_focused_holo_dark"></item>
+
+    <item android:state_selected="true" android:state_window_focused="true" android:drawable="@drawable/btn_rating_star_on_focused_holo_dark"></item>
+
+    <item android:drawable="@drawable/btn_rating_star_on_normal_holo_dark"></item>
+
+</selector><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/ratingbar_full_filled_holo_dark.xml --><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/build/intermediates/bundles/debug/res/drawable/ratingbar_full_filled_holo_dark.xml -->

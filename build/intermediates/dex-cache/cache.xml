@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/exploded-aar/usmc-pro-fitness/holoEverywhere/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1ce81f89cb92571346b17df60170b8aa2a5bcfc1">
+        <dex dex="/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/pre-dexed/debug/classes-0c7421982ce9b80733afe2f0baafbcb9eabab2a7.jar" />
+    </item>
+    <item
+        jar="/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="af64527b748983a75de9c0756e9768b56b240a49">
+        <dex dex="/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/pre-dexed/debug/classes-b6179e6d27446df06c290a08bc34c9aa068b5a3f.jar" />
+    </item>
+    <item
+        jar="/Users/patdugan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/pre-dexed/debug/support-v4-18.0.0-1f335b2bf7bdf6a0f7bbcca4a7a23a2d80163a45.jar" />
+    </item>
+
+</items>

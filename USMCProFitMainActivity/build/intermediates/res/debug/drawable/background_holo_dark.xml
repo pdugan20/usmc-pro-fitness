@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?><shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+	<gradient android:endColor="#272D33" android:startColor="#000000" android:angle="270" android:type="linear"></gradient>
+</shape><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/background_holo_dark.xml --><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/exploded-aar/usmc-pro-fitness/holoEverywhere/unspecified/res/drawable/background_holo_dark.xml -->

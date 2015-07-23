@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/expander_ic_maximized" android:state_expanded="true"></item>
+    <item android:drawable="@drawable/expander_ic_minimized"></item>
+</selector><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/expander_group.xml -->

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><alpha xmlns:android="http://schemas.android.com/apk/res/android" android:toAlpha="0.0" android:interpolator="@interpolator/accelerate_quad" android:duration="@integer/config_mediumAnimTime" android:fromAlpha="1.0"></alpha><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/anim/fade_out.xml -->

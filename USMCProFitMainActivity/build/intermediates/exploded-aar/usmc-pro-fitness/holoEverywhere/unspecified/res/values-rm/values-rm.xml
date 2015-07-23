@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/values-rm/strings.xml -->
+    <eat-comment/>
+    <string name="candidates_style">"candidats"</string>
+    <string name="capital_off">"DEACTIVÀ"</string>
+    <string name="capital_on">"ACTIVÀ"</string>
+    <string name="date_time_set">"Definir"</string>
+    <string name="ringtone_default">"Tun da scalin predefinì"</string>
+    <string name="ringtone_picker_title">"Tuns da scalin"</string>
+    <string name="ringtone_silent">"Silenzius"</string>
+    <string name="whichApplication">"Cumplettar l\'acziun cun"</string>
+</resources>

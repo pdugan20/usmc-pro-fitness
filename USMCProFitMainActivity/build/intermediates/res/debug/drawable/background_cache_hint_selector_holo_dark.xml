@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:state_accelerated="false" android:color="#ff000000"></item>
+	<item android:color="@android:color/transparent"></item>
+</selector><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/background_cache_hint_selector_holo_dark.xml --><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/exploded-aar/usmc-pro-fitness/holoEverywhere/unspecified/res/drawable/background_cache_hint_selector_holo_dark.xml -->

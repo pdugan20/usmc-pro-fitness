@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/values-large/config.xml -->
+    <eat-comment/>
+    <dimen name="config_prefDialogWidth">440dp</dimen>
+    <!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/values-large/dimens.xml -->
+    <eat-comment/>
+    <item name="dialog_min_width_major" type="dimen">55%</item>
+    <item name="dialog_min_width_minor" type="dimen">80%</item>
+    <!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/values-large/themes.xml -->
+    <eat-comment/>
+    <style name="Holo.Theme.DialogWhenLarge" parent="Holo.Theme.Dialog.FixedSize"/>
+    <style name="Holo.Theme.DialogWhenLarge.Light" parent="Holo.Theme.Dialog.Light.FixedSize"/>
+    <style name="Holo.Theme.DialogWhenLarge.Light.DarkActionBar"/>
+</resources>

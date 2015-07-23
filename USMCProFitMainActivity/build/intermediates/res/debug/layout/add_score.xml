@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_fitness_test_label"
+            android:textSize="14dp"
+            android:textColor="#999999"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+		
+       <View
+       		android:layout_width="fill_parent"
+    		android:layout_height="1dp"
+    		android:background="#999999"
+    		android:layout_marginBottom="5dp" 
+    		android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+        
+        <Spinner
+            android:id="@+id/test_selection_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/fitness_type_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/pft_background"
+            android:textColor="#D6D6D6"
+            android:textSize="65pt" />
+        
+        <TextView
+            android:id="@+id/fitness_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="@string/pft_test_description"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_marginBottom="15dp" />
+
+    </LinearLayout>
+    
+    <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:padding="5dp"
+	    android:layout_marginTop="5dp"
+	    android:background="#DDDDDD" >	
+	    
+   	    <Button
+   	        android:id="@+id/BackButton" 
+   	        android:text="@string/back_button"
+   	        android:layout_width="100dp" 
+   	        android:layout_height="wrap_content" />
+   	    
+   		<Button
+   		    android:id="@+id/NextButton" 
+   		    android:text="@string/next_button"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content" /> 
+			 		
+	</LinearLayout>	
+
+</LinearLayout><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/src/main/res/layout/add_score.xml -->

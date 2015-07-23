@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/scrubber_track_holo_dark" android:id="@android:id/background"></item>
+    <item android:id="@android:id/secondaryProgress">
+        <scale android:drawable="@drawable/scrubber_secondary_holo" android:scaleWidth="100%"></scale>
+    </item>
+    <item android:id="@android:id/progress">
+        <scale android:drawable="@drawable/scrubber_primary_holo" android:scaleWidth="100%"></scale>
+    </item>
+
+</layer-list><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/scrubber_progress_horizontal_holo_dark.xml --><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/build/intermediates/bundles/debug/res/drawable/scrubber_progress_horizontal_holo_dark.xml -->

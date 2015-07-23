@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="4.4.0"><source path="/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/assets"/></dataSet><dataSet config="debug"><source path="/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/build/intermediates/bundles/debug/assets"/></dataSet><dataSet config="main"><source path="/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/androidTest/assets"/></dataSet></merger>

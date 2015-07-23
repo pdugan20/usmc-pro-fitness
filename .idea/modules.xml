@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/holoEverywhere/holoEverywhere.iml" filepath="$PROJECT_DIR$/holoEverywhere/holoEverywhere.iml" />
+      <module fileurl="file://$PROJECT_DIR$/USMCProFitMainActivity/uSMCProFitMainActivity.iml" filepath="$PROJECT_DIR$/USMCProFitMainActivity/uSMCProFitMainActivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usmc-pro-fitness.iml" filepath="$PROJECT_DIR$/usmc-pro-fitness.iml" />
+    </modules>
+  </component>
+</project>

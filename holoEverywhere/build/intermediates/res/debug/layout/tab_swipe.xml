@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><ViewPager xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/tabSwipePager"></ViewPager><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/layout/tab_swipe.xml -->

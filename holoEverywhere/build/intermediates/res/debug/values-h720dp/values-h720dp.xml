@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/values-h720dp/dimens.xml -->
+    <eat-comment/>
+    <dimen name="alert_dialog_button_bar_height">54dip</dimen>
+</resources>

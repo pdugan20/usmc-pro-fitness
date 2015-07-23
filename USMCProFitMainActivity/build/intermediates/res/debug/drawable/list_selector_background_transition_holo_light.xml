@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><transition xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:drawable="@drawable/list_pressed_holo_light"></item>
+	<item android:drawable="@drawable/list_longpressed_holo"></item>
+</transition><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/list_selector_background_transition_holo_light.xml --><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/exploded-aar/usmc-pro-fitness/holoEverywhere/unspecified/res/drawable/list_selector_background_transition_holo_light.xml -->

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:drawable="@drawable/fastscroll_track_pressed_holo_light" android:state_pressed="true"></item>
+	<item android:drawable="@drawable/fastscroll_track_default_holo_light"></item>
+</selector><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/src/main/res/drawable/fastscroll_track_holo_light.xml --><!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/USMCProFitMainActivity/build/intermediates/exploded-aar/usmc-pro-fitness/holoEverywhere/unspecified/res/drawable/fastscroll_track_holo_light.xml -->

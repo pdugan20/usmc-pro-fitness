@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/patdugan/GitHub/usmc-pro-fitness/holoEverywhere/build/intermediates/bundles/debug/res/values-large/values-large.xml -->
+    <eat-comment/>
+    <dimen name="config_prefDialogWidth">440dp</dimen>
+    <item name="dialog_min_width_major" type="dimen">55%</item>
+    <item name="dialog_min_width_minor" type="dimen">80%</item>
+    <style name="Holo.Theme.DialogWhenLarge" parent="Holo.Theme.Dialog.FixedSize"/>
+    <style name="Holo.Theme.DialogWhenLarge.Light" parent="Holo.Theme.Dialog.Light.FixedSize"/>
+    <style name="Holo.Theme.DialogWhenLarge.Light.DarkActionBar"/>
+</resources>
